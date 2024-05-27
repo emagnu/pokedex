@@ -2,6 +2,7 @@
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 //  Import FILES
 import 'core_src/presentation/pages/home_page.dart';
 //  //  ///
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
       title: 'Riverpod for Pokenon Lovers!',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreen),
+        textTheme: GoogleFonts.quattrocentoSansTextTheme(),
         useMaterial3: true,
       ),
       home: const HomePage(),
