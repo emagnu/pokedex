@@ -1,16 +1,21 @@
 //  //  ///
 //  Import LIBRARIES
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 //  Import FILES
+import '../providers/home_page_provider.dart';
 //  //  ///
 
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
-class HomePage extends StatelessWidget {
+// class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final homePageController = ref.watch(homePageControllerProvider.notifier);
+    final homePageData = ref.watch(homePageControllerProvider);
+    //final _homePageController.fetchPokemons();
+
     return Scaffold(
       // appBar: AppBar(title: const Text('Home Page'),),
       body: _buildUI(context),
@@ -48,7 +53,7 @@ class HomePage extends StatelessWidget {
           SizedBox(
             width: MediaQuery.sizeOf(context).height * 0.60,
             child: ListView.builder(
-              itemCount: 10,
+              itemCount: 30,
               shrinkWrap: true,
               scrollDirection: Axis.vertical,
               itemBuilder: (context, index) {
